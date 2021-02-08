@@ -1,0 +1,42 @@
+#!/opt/local/bin/zsh
+
+source $HOME/.config/yabai/aliases.zsh
+source $HOME/.config/yabai/defines.zsh
+
+
+yc window_opacity off
+# yc active_window_opacity 1.0
+# yc normal_window_opacity 0.9
+# yc window_topmost on
+yc window_shadow float
+yc window_gap 4
+yc window_border on
+yc window_border_width 6
+yc normal_window_border_color ff6c6d70
+yc active_window_border_color ff2b75a5
+
+
+yc mouse_follows_focus on
+yc focus_follows_mouse autofocus
+yc mouse_modifier cmd
+yc mouse_action1 move
+yc mouse_action2 resize
+yc mouse_drop_action stack
+
+
+yr label=finder app='^Finder$' manage=off
+yr label=monitor app='^Activity Monitor$' manage=off
+yr label=calculator app='^Calculator$' manage=off
+yr label=preferences app='^System Preferences$' manage=off
+yr label=enpass app='^Enpass$' manage=off
+yr label=tunnelblick app='^Tunnelblick$' manage=off
+yr label=jetbrainstoolbox app='^JetBrains Toolbox$' manage=off
+yr label=littlesnitch app='^Little Snitch.*' manage=off
+yr label=btt app='^BetterTouchTool$' manage=off
+
+
+ys label=display_added event=display_added action="python3 $HOME/.config/yabai/layout.py --safe"
+ys label=display_removed event=display_removed action="python3 $HOME/.config/yabai/layout.py --safe"
+
+python3 $HOME/.config/yabai/layout.py --safe
+
