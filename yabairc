@@ -10,18 +10,19 @@ yc window_opacity off
 # yc window_topmost on
 yc window_shadow float
 yc window_gap 4
-yc window_border on
+# yc window_border on
+yc window_border off
 yc window_border_width 6
 yc normal_window_border_color ff6c6d70
 yc active_window_border_color ff2b75a5
 
 
-yc mouse_follows_focus on
-yc focus_follows_mouse autofocus
-yc mouse_modifier cmd
-yc mouse_action1 move
-yc mouse_action2 resize
-yc mouse_drop_action stack
+# yc mouse_follows_focus off
+# yc focus_follows_mouse autofocus
+# yc mouse_modifier cmd
+# yc mouse_action1 move
+# yc mouse_action2 resize
+# yc mouse_drop_action stack
 
 
 yr label=finder app='^Finder$' manage=off

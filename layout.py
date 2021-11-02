@@ -90,8 +90,10 @@ window_setup = WindowSetup({
     'Slack': comm,
     'WhatsApp': comm,
     'Rambox': comm,
+    'Microsoft Teams': comm,
 
     'PyCharm': dev1,
+    'JetBrains Rider': dev1,
     'iTerm2': dev1,
     'Firefox': dev2,
     'Vivaldi': dev2,
@@ -264,12 +266,12 @@ def do_setup():
         num_prev_spaces += len(spaces)
 
 
-    if displays_in_use == 1:
-        config('layout', 'stack')
-    else:
-        config('layout', 'bsp')
-        for label in ['main', 'org', 'comm', 'dev2']:
-            invoke_yabai('space', label, layout='stack')
+    # if displays_in_use == 1:
+    config('layout', 'stack')
+    # else:
+    #    config('layout', 'bsp')
+    #    for label in ['main', 'org', 'comm', 'dev2']:
+    #        invoke_yabai('space', label, layout='stack')
 
     windows_by_app = defaultdict(list)
     for window in query('windows'):
